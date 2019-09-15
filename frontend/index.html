@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>DisCom</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/grayscale.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+  <!-- Header -->
+  <header class="masthead">
+    <div class="container d-flex h-100 align-items-center">
+      <div class="mx-auto text-center">
+        <h1 class="mx-auto my-0 text-uppercase">disCOM</h1>
+        <h2 class="text-white-50 mx-auto mt-2 mb-5">Novel tool for communicating local community's needs after Natural Disasters.</h2>
+        <a href="#about" class="btn btn-primary js-scroll-trigger">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="about-section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto">
+          <h2 class="text-white mb-4">What Is disCOM For?</h2>
+            <p class="text-white-50">disCOM offers a way for natural disasters victims located in remote areas to send info about their needs to authorities.
+            A victim uses disCOM hardware device to describe needs regarding food, health or whether they're trapped or not. Info gets transferred to nearby disCOM devices until it reaches a central device
+          that sends the data to disCOM servers. Authorities can then use a dashboard to pinpoint the exact map locations of victims and their exact needs. </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <button type="button" id="addNew"></button>
+  <div id="map"></div>
+
+  <!-- Footer -->
+  <footer class="bg-black small text-center text-white-50">
+    <div class="container">
+      Copyright &copy; disCOM 2019
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="js/grayscale.min.js"></script>
+
+  <style>
+    #map {
+      height: 100%;
+    }
+    /* Optional: Makes the sample page fill the window. */
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <script>
+    var map;
+    function initMap() {
+      map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 42.36, lng: -71.06},
+        zoom: 14
+      });
+
+      //var points = [new google.maps.LatLng(42.362001, -71.060267), new google.maps.LatLng(42.366001, -71.060267)];
+      var markers = [];
+      for (var i = 0; i < 10; i++)
+      {
+        var heatMap = new google.maps.visualization.HeatmapLayer({
+          data: [new google.maps.LatLng(parseFloat(points[i][0]), parseFloat(points[i][1]))],
+          map: map,
+          radius: 20
+        });
+        var marker = new google.maps.Marker({
+          position: new google.maps.LatLng(parseFloat(points[i][0]), parseFloat(points[i][1])),
+          map: map,
+          opacity: 0.1
+        });
+
+        var contentString = "<h4>In Need</h4>" +
+                            "<ul>" +
+                            "<li>" + points[i][2] + " Injured</li>";
+        if (points[i][3] == "true")
+          contentString += "<li>Needs Food</li>";
+        if (points[i][4] == "true")
+          contentString += "<li>Trapped!</li>";
+        contentString += "<li>Location: " + parseFloat(points[i][0]).toFixed(3) + ", " + parseFloat(points[i][1]).toFixed(3) + "</li>";
+
+        var infoWindow = new google.maps.InfoWindow({
+          content: contentString,
+          map: map,
+          position: {lat: parseFloat(points[i][0]), lng: parseFloat(points[i][1]) }
+        });
+      }
+    }
+
+    function addPoint(injured, needFood, isTrapped) {
+      var coors = [42.355011, -71.055714];
+      coors[0] += Math.random() / 100;
+      coors[1] += Math.random() / 100;
+
+      var heatMap = new google.maps.visualization.HeatmapLayer({
+        data: [new google.maps.LatLng(parseFloat(coors[0]), parseFloat(coors[1]))],
+        map: map,
+        radius: 20
+      });
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(parseFloat(coors[0]), parseFloat(coors[1])),
+        map: map,
+        opacity: 0.1
+      });
+
+      var contentString = "<h4>In Need</h4>" +
+                          "<ul>" +
+                          "<li>" + injured + " Injured</li>";
+      if (needFood == true)
+        contentString += "<li>Needs Food</li>";
+      if (isTrapped == true)
+        contentString += "<li>Trapped!</li>";
+      contentString += "<li>Location: " + parseFloat(coors[0]).toFixed(3) + ", " + parseFloat(coors[1]).toFixed(3) + "</li>";
+
+      var infoWindow = new google.maps.InfoWindow({
+        content: contentString,
+        map: map,
+        position: {lat: parseFloat(coors[0]), lng: parseFloat(coors[1]) }
+      });
+    }
+
+    $('#addNew').on('click', function() {
+      console.log('hi');
+      addPoint(3, true, false);
+      console.log('bye');
+    });
+
+    var points = [
+      ['42.3583', '-71.065522', '1', 'true', 'false'],
+      ['42.357299999999995', '-71.072522', '0', 'true', 'true'],
+      ['42.3643', '-71.05252200000001', '0', 'false', 'false'],
+      ['42.366299999999995', '-71.057522', '6', 'false', 'true'],
+      ['42.3503', '-71.075522', '1', 'true', 'false'],
+      ['42.323299999999996', '-71.062522', '1', 'true', 'true'],
+      ['42.3653', '-71.04952200000001', '6', 'false', 'true'],
+      ['42.3473', '-71.069522', '5', 'true', 'true'],
+      ['42.339299999999994', '-71.07052200000001', '6', 'true', 'false'],
+      ['42.3303', '-71.075522', '1', 'true', 'false'],
+      ['42.366299999999995', '-71.054522', '1', 'false', 'false'],
+      ['42.3213', '-71.06752200000001', '4', 'true', 'true'],
+      ['42.406299999999995', '-71.047522', '3', 'false', 'false'],
+      ['42.3223', '-71.063522', '3', 'true', 'true'],
+      ['42.3673', '-71.048522', '1', 'false', 'true'],
+      ['42.4043', '-71.054522', '4', 'false', 'true'],
+      ['42.3643', '-71.053522', '1', 'false', 'false'],
+      ['42.4023', '-71.05852200000001', '5', 'false', 'true'],
+      ['42.4103', '-71.047522', '4', 'false', 'false'],
+      ['42.393299999999996', '-71.053522', '4', 'false', 'true'],
+      ['42.3243', '-71.07352200000001', '1', 'true', 'false'],
+      ['42.3653', '-71.05252200000001', '6', 'false', 'true'],
+      ['42.357299999999995', '-71.068522', '0', 'true', 'true'],
+      ['42.3223', '-71.072522', '0', 'true', 'false'],
+      ['42.3323', '-71.06752200000001', '6', 'true', 'false'],
+      ['42.3343', '-71.068522', '3', 'true', 'true'],
+      ['42.3313', '-71.072522', '5', 'true', 'true'],
+      ['42.3403', '-71.075522', '0', 'true', 'true'],
+      ['42.4103', '-71.056522', '4', 'false', 'false'],
+      ['42.372299999999996', '-71.05552200000001', '4', 'false', 'false']
+    ];
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZ5L9GhhYYHadNjMF4l7_4Ob8663d9S0Y&libraries=visualization&callback=initMap" async defer></script>
+</body>
+
+</html>
