@@ -1,0 +1,822 @@
+[
+    {
+        "id": "fedbff53.de7a1",
+        "type": "tab",
+        "label": "TJBot Speech ",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "673c7ecd.c93f5",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Demo",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "c879972a.427248",
+        "type": "ui_group",
+        "z": "",
+        "name": "Gauge",
+        "tab": "673c7ecd.c93f5",
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "2f39c6b6.dece9a",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "269a2295.8b295e",
+        "type": "ui_group",
+        "z": "",
+        "name": "Group 2",
+        "tab": "673c7ecd.c93f5",
+        "order": 2,
+        "disp": true,
+        "width": "8",
+        "collapse": false
+    },
+    {
+        "id": "9a8242e3.a7a63",
+        "type": "watson-speech-to-text",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "alternatives": "",
+        "speakerlabels": false,
+        "smartformatting": false,
+        "lang": "en-US",
+        "langhidden": "en-US",
+        "langcustom": "NoCustomisationSetting",
+        "langcustomhidden": "",
+        "custom-weight": "",
+        "band": "BroadbandModel",
+        "bandhidden": "BroadbandModel",
+        "keywords": "",
+        "keywords-threshold": "",
+        "word-confidence": false,
+        "password": "",
+        "apikey": "TMUjPYQlwuSuyJxOTJoueFaXxPXlEutNicUJ5eWScgyO",
+        "payload-response": true,
+        "streaming-mode": false,
+        "streaming-mute": false,
+        "auto-connect": false,
+        "discard-listening": false,
+        "disable-precheck": false,
+        "default-endpoint": true,
+        "service-endpoint": "",
+        "x": 788.7500076293945,
+        "y": 206.25000286102295,
+        "wires": [
+            [
+                "a59b8e56.1d12d",
+                "9be6a18b.a2ac7"
+            ]
+        ]
+    },
+    {
+        "id": "fa0d28ac.823558",
+        "type": "comment",
+        "z": "fedbff53.de7a1",
+        "name": "Paste API keys for Speech to Text",
+        "info": "1. Log into Bluemix\n2. Create an instance of the \nWatson Speech to Text service.\n3. Visit the Service Credentials tab\n4. Click on View Credentials\n5. Copy/Paste the password and username into\nthis Node-RED node.",
+        "x": 886.7500076293945,
+        "y": 132.75000190734863,
+        "wires": []
+    },
+    {
+        "id": "3734fc88.be1504",
+        "type": "comment",
+        "z": "fedbff53.de7a1",
+        "name": "Tell the TJBot to Wave or Set a Color or ask for the Weather Report",
+        "info": "",
+        "x": 922.5,
+        "y": 77.50000095367432,
+        "wires": []
+    },
+    {
+        "id": "a59b8e56.1d12d",
+        "type": "debug",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1112.500015258789,
+        "y": 191.25000286102295,
+        "wires": []
+    },
+    {
+        "id": "7d39cc56.429ae4",
+        "type": "ui_gauge",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "group": "c879972a.427248",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Injured",
+        "label": "People",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "20",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1119.1111679077148,
+        "y": 641.6666383743286,
+        "wires": []
+    },
+    {
+        "id": "1c39d17.362242f",
+        "type": "microphone",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "x": 543.0000076293945,
+        "y": 236.00000381469727,
+        "wires": [
+            [
+                "9a8242e3.a7a63"
+            ]
+        ]
+    },
+    {
+        "id": "d9406410.ce5a18",
+        "type": "watson-assistant-v2",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "default-endpoint": true,
+        "service-endpoint": "https://gateway.watsonplatform.net/assistant/api",
+        "assistant_id": "ddf93be8-ef11-46f3-9e37-33acb07a3b8c",
+        "debug": false,
+        "restart": false,
+        "return_context": true,
+        "alternate_intents": false,
+        "multisession": true,
+        "timeout": "",
+        "optout-learning": false,
+        "x": 763.7500686645508,
+        "y": 341.97223472595215,
+        "wires": [
+            [
+                "67c727da.76ad28",
+                "e17c522d.1cf52"
+            ]
+        ]
+    },
+    {
+        "id": "9be6a18b.a2ac7",
+        "type": "change",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "transcription",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 855.2500152587891,
+        "y": 278.75000381469727,
+        "wires": [
+            [
+                "d9406410.ce5a18"
+            ]
+        ]
+    },
+    {
+        "id": "67c727da.76ad28",
+        "type": "function",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "func": "var response = msg.payload.output.generic[0].text\nmsg.payload = response;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 1019.7500228881836,
+        "y": 420.75000858306885,
+        "wires": [
+            [
+                "b6671604.616468",
+                "2089c84b.6f6dd8",
+                "8e1e3d91.cf3",
+                "66066385.37005c"
+            ]
+        ]
+    },
+    {
+        "id": "b6671604.616468",
+        "type": "ui_toast",
+        "z": "fedbff53.de7a1",
+        "position": "dialog",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 1,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 1179.2500228881836,
+        "y": 461.25000953674316,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2089c84b.6f6dd8",
+        "type": "debug",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1216.750015258789,
+        "y": 407.0000057220459,
+        "wires": []
+    },
+    {
+        "id": "e17c522d.1cf52",
+        "type": "debug",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1091.7500076293945,
+        "y": 345.25000286102295,
+        "wires": []
+    },
+    {
+        "id": "f1e16d8f.6e516",
+        "type": "change",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.context.skills[\"main skill\"].user_defined.num_injured",
+                "tot": "msg"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "people are injured",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1064.1111640930176,
+        "y": 581.833384513855,
+        "wires": [
+            [
+                "7d39cc56.429ae4",
+                "45c5624a.97da9c"
+            ]
+        ]
+    },
+    {
+        "id": "45c5624a.97da9c",
+        "type": "debug",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1172.083351135254,
+        "y": 540.6944761276245,
+        "wires": []
+    },
+    {
+        "id": "84225d2b.10a93",
+        "type": "debug",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 805.9721183776855,
+        "y": 400.2777462005615,
+        "wires": []
+    },
+    {
+        "id": "96537032.79e44",
+        "type": "change",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.context.skills[\"main skill\"].user_defined.yes_food",
+                "tot": "msg"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "need food",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.context.skills[\"main skill\"].user_defined.no_food",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 774.0277252197266,
+        "y": 561.2500104904175,
+        "wires": [
+            [
+                "e890e0e1.16d84",
+                "4fd4b295.439fec"
+            ]
+        ]
+    },
+    {
+        "id": "e890e0e1.16d84",
+        "type": "debug",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 917.7777862548828,
+        "y": 476.94446563720703,
+        "wires": []
+    },
+    {
+        "id": "8e1e3d91.cf3",
+        "type": "switch",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "cont",
+                "v": "need food",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "people are injured",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "need water",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "trapped",
+                "vt": "str"
+            },
+            {
+                "t": "cont",
+                "v": "of 5 damage in the surrounding area",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 5,
+        "x": 657.5000152587891,
+        "y": 468.75000858306885,
+        "wires": [
+            [
+                "96537032.79e44"
+            ],
+            [
+                "f1e16d8f.6e516"
+            ],
+            [
+                "6d638a0d.7d5e34"
+            ],
+            [
+                "f703d054.ea949"
+            ],
+            [
+                "412c004.6315e"
+            ]
+        ]
+    },
+    {
+        "id": "f703d054.ea949",
+        "type": "change",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.context.skills[\"main skill\"].user_defined.trapped_yes",
+                "tot": "msg"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "trapped",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.context.skills[\"main skill\"].user_defined.trapped_no",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 387.50000762939453,
+        "y": 632.5000095367432,
+        "wires": [
+            [
+                "d5296c71.14641",
+                "22b3b78f.f52498"
+            ]
+        ]
+    },
+    {
+        "id": "6d638a0d.7d5e34",
+        "type": "change",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.context.skills[\"main skill\"].user_defined.yes_water",
+                "tot": "msg"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "need water",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.context.skills[\"main skill\"].user_defined.no_water",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 638.7500076293945,
+        "y": 642.5000095367432,
+        "wires": [
+            [
+                "7d77c451.44318c",
+                "8f11fc55.53a7f"
+            ]
+        ]
+    },
+    {
+        "id": "d5296c71.14641",
+        "type": "debug",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 450.0000419616699,
+        "y": 577.5000104904175,
+        "wires": []
+    },
+    {
+        "id": "7d77c451.44318c",
+        "type": "debug",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 778.7500114440918,
+        "y": 605.0000095367432,
+        "wires": []
+    },
+    {
+        "id": "2f501619.87576a",
+        "type": "inject",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "topic": "",
+        "payload": "welcome",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 532.9166259765625,
+        "y": 291.6666889190674,
+        "wires": [
+            [
+                "9be6a18b.a2ac7"
+            ]
+        ]
+    },
+    {
+        "id": "4fd4b295.439fec",
+        "type": "ui_text",
+        "z": "fedbff53.de7a1",
+        "group": "c879972a.427248",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "food",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 962.5000152587891,
+        "y": 525.0000076293945,
+        "wires": []
+    },
+    {
+        "id": "8f11fc55.53a7f",
+        "type": "ui_text",
+        "z": "fedbff53.de7a1",
+        "group": "c879972a.427248",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Water",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 801.2500114440918,
+        "y": 666.2500095367432,
+        "wires": []
+    },
+    {
+        "id": "22b3b78f.f52498",
+        "type": "ui_text",
+        "z": "fedbff53.de7a1",
+        "group": "c879972a.427248",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "trapped",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 491.25000762939453,
+        "y": 692.5000114440918,
+        "wires": []
+    },
+    {
+        "id": "412c004.6315e",
+        "type": "change",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.context.skills[\"main skill\"].user_defined.num_damage",
+                "tot": "msg"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "of 5 damage in the surrounding area",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1046,
+        "y": 760,
+        "wires": [
+            [
+                "f7372537.4ea388",
+                "68873e40.8b047"
+            ]
+        ]
+    },
+    {
+        "id": "68873e40.8b047",
+        "type": "debug",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 1153.9721870422363,
+        "y": 718.8610916137695,
+        "wires": []
+    },
+    {
+        "id": "f7372537.4ea388",
+        "type": "ui_gauge",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "group": "c879972a.427248",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Damage",
+        "label": "People",
+        "format": "{{msg.payload}}",
+        "min": 0,
+        "max": "5",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 1111.0000038146973,
+        "y": 819.8332538604736,
+        "wires": []
+    },
+    {
+        "id": "66066385.37005c",
+        "type": "play audio",
+        "z": "fedbff53.de7a1",
+        "name": "",
+        "voice": "50",
+        "x": 1250.3333740234375,
+        "y": 287.3333435058594,
+        "wires": []
+    }
+]
