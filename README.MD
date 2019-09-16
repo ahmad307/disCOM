@@ -1,4 +1,4 @@
-disCOM ReadME
+# disCOM: Novel tool that enables natural disaster victims in remote locations to communicate their needs to authorities.
 Steps to install disCOM on a RaspberryPi:
 1. Install Node-Red using the steps provided in this walkthrough: https://nodered.org/docs/getting-started/raspberrypi
 2. Start Node-Red from the terminal.
